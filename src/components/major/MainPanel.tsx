@@ -36,7 +36,7 @@ const MainPanel: FC<TypeMainPanelProps & TypeDatabaseConnection> = ({
     id: uuidv4(),
     priority: currentPriority,
     taskName: "",
-    dueDate: "",
+    dueDate: format(new Date(), "yyyy-MM-dd"),
     completionDate: "",
     done: false,
   });
@@ -155,7 +155,7 @@ const MainPanel: FC<TypeMainPanelProps & TypeDatabaseConnection> = ({
                 id="dueDate"
                 name="dueDate"
                 type="date"
-                className="shadow-[3px_4px_0px_0px_rgba(10,25,47)] bg-Wild-Blue-Yonder w-fit h-10 text-sm appearance-none border-2 border-Wild-Blue-Yonder rounded py-1 px-2 text-Navy leading-tight focus:outline-none focus:bg-Alice-Blue focus:border-Navy placeholder-Navy"
+                className="shadow-[3px_4px_0px_0px_rgba(10,25,47)] bg-Wild-Blue-Yonder w-max h-10 text-sm appearance-none border-2 border-Wild-Blue-Yonder rounded py-1 px-2 text-Navy leading-tight focus:outline-none focus:bg-Alice-Blue focus:border-Navy placeholder-Navy"
                 value={task.dueDate}
                 onChange={handleChange}
                 min={format(new Date(), "yyyy-MM-dd")}
