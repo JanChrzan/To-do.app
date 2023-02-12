@@ -2,6 +2,7 @@ import { useCallback, Dispatch, SetStateAction, FormEvent } from "react";
 import axios from "axios";
 import { TypeTask } from "./TypeTask";
 import { v4 as uuidv4 } from "uuid";
+import {format} from "date-fns";
 
 type TypeHandleSubmitProps = {
   task: TypeTask;
@@ -56,7 +57,7 @@ export const handleSubmit = ({
         id: uuidv4(),
         priority: currentPriority,
         taskName: "",
-        dueDate: "",
+        dueDate: format(new Date(), "yyyy-MM-dd"),
         completionDate: "",
         done: false,
       });
