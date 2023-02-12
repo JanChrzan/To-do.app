@@ -2,6 +2,7 @@ import { useState, FC } from "react";
 import MainPanel from "./components/major/MainPanel";
 import TasksContainer from "./components/major/TasksContainer";
 import { TypeTask } from "./utils/TypeTask";
+import background from "./assets/bg.svg"
 
 const App: FC = () => {
   const [tasks, setTasks] = useState<TypeTask[]>([]);
@@ -9,7 +10,7 @@ const App: FC = () => {
 
   return (
     <div className="flex flex-col mx-auto w-[95vw] lg:w-2/3 xl:w-1/2">
-      <img id="background" src="./src/assets/bg.svg" alt="Background" />
+      <img id="background" src={background} alt="Background" />
       <MainPanel
         tasks={tasks}
         setTasks={setTasks}
